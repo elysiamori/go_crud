@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Go Tech</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <style>
+        .container{
+            max-width: 550px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h3>Update Tech Data</h3>
+        <a href="/tech" class="btn btn-sm btn-primary">Data</a>
+        <hr/>
+        
+
+        {{ if .message }}
+            <div class="alert alert-success">
+                {{ .message }}
+            </div>
+        {{ end }}
+
+
+        <form action="/tech/edit" method="post">
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" name="name" value="{{ .tech.Name }}" class="form-control {{ if .validation.Name  }} is-invalid {{ end }}">
+                <div class="invalid-feedback">
+                    {{ .validation.Name }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Job</label>
+                <input type="text" name="job" value="{{ .tech.Job }}" class="form-control {{ if .validation.Job  }} is-invalid {{ end }}">
+                <div class="invalid-feedback">
+                    {{ .validation.Job }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Programming</label>
+                <input type="text" name="programming" value="{{ .tech.Programming }}" class="form-control {{ if .validation.Programming  }} is-invalid {{ end }}">
+                <div class="invalid-feedback">
+                    {{ .validation.Programming }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Date</label>
+                <input type="date" name="date" value="{{ .tech.Date }}" class="form-control {{ if .validation.Date  }} is-invalid {{ end }}">
+                <div class="invalid-feedback">
+                    {{ .validation.Date }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" name="id" value="{{ .tech.Id }}">
+                <button class="btn btn-primary btn-block" type="submit">Update Data</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

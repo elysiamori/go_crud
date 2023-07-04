@@ -1,0 +1,66 @@
+:roat{
+    --clr-dark: rgb(31 43 55);
+    --clr-light:rgb(107 114 128);
+
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+}
+
+.navbar-brand{
+    font-family: 'Nunito', sans-serif;
+    color:var(--clr-dark);
+}
+
+.nav-link{
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.nav-link.active,
+.navbar-brand{
+    color:var(--clr-dark);
+    
+}
+
+.calliope-mori{
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: var(--clr-dark);
+}
+
+.mori{
+    object-fit: cover;
+    width: 80%;
+    border-radius: 1rem;
+    margin-right: -240px;
+}
+
+.imageAboutPage {
+    width: 100%;
+	object-fit: cover;
+    border-radius: 1rem;
+    margin-right: -240px;
+}
+/* keahlian section css */
+.servicesText.card {
+    height: 280px;
+    cursor: pointer;
+
+  }
+.servicesIcon {
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+}
+.card-title {
+    text-align: center;
+}
+.card:hover .servicesIcon {
+    color: #008000;
+}
+.servicesText:hover {
+    border: 1px solid #008000;
+}
+
