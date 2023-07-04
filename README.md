@@ -1,3 +1,3 @@
 # First Go Project
-Golang, MySQL, Bootstrap.
+# Golang, MySQL, Bootstrap.
 Agak huek tapi ga ngaruh
