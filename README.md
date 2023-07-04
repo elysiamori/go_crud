@@ -1,2 +1,3 @@
 # First Go Project
-CRUD
+Golang, MySQL, Bootstrap.
+Agak huek tapi ga ngaruh
