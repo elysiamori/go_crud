@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Tech</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="/dist/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-neutral-950">
+    <div class="max-w-screen-xl mx-auto p-10">
+        <h3 class="text-5xl text-zinc-200 my-5">Golang CRUD</h3>
+        <button href="/tech/add" class="bg-black border-2 border-zinc-800 rounded-lg text-zinc-200 px-4 py-2  hover:border-white hover:bg-stone-200 hover:text-stone-800 hover:delay-150 transition hover:scale-105 hover:-translate-y-1 ease-in-out hover:duration-500">Add Data</button>
+        <hr class="border-zinc-800 border-2 my-10"/>
+        <!--Struktur Table-->
+        <div class="grid grid-cols-3 gap-8 mx-auto">
+            <div class="bg-black border-zinc-800 border-2 rounded-lg p-5 text-zinc-200 w-80 hover:border-white hover:delay-200 hover:duration-500">
+                <div class="">
+                    <div class="">
+                        <h5 class="">{{ .Date }}</h5>
+                        <div class="">
+                            <h4 class="">{{ .Name }}</h4>
+                            <p class="">{{ .Job }}</p>
+                            <p class="">{{ .Programming }}</p>
+                            <button href="/tech/edit?id={{ .Id }}" class="text-base  border-2 rounded-lg border-zinc-800 px-4 py-2 mt-5 hover:border-white hover:bg-green-600 hover:delay-150 transition hover:scale-1105 hover:-translate-y-1 ease-in-out hover:duration-500">Edit</button>
+                            <button href="/tech/delete?id={{ .Id }}" onclick="return confirm('You sure want to delete data ? ')" class=" border-zinc-800 border-2 rounded-lg px-4 py-2 mt-5 hover:border-white hover:bg-red-600 hover:delay-150 transition hover:scale-1105 hover:-translate-y-1 ease-in-out hover:duration-500">Delete</button>
+                        </div>
+                   </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
