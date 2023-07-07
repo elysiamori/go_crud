@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Tech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .container{
+            max-width: 550px;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950">
+    <!-- 
+        max-w-sxreen-sm = Untuk mengubah ukuran konten yang ada di dalam cakupan class div 
+    -->
+    <div class="max-w-screen-sm mx-auto p-10">
+        <h3 class="text-5xl text-zinc-200 my-5">Add Tech Data</h3>
+        <button href="/tech"  class="bg-black border-2 border-zinc-800 rounded-lg text-zinc-200 px-4 py-2  hover:border-white hover:bg-stone-200 hover:text-stone-800 hover:delay-150 transition hover:scale-105 hover:-translate-y-1 ease-in-out hover:duration-500">Data</button>
+        <hr class="border-zinc-800 border-2 my-10"/>
+        
+
+        {{ if .message }}
+            <div class="border-2 bg-green-500 border-zinc-800 rounded-lg p-2">
+                {{ .message }}
+            </div>
+        {{ end }}
+
+
+        <form action="/tech/add" method="post" class="text-white leading-8">
+            <div class="mb-6">
+                <label for="" class="text-lg">Name</label>
+                <input type="text" name="name" value="{{ .tech.Name }}" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 {{ if .validation.Name  }} is-invalid {{ end }}">
+                <div class="invalid-feedback">
+                    {{ .validation.Name }}
+                </div>
+            </div>
+            <div class="mb-6">
+                <label for="">Job</label>
+                <input type="text" name="job" value="{{ .tech.Job }}" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 {{ if .validation.Job  }} is-invalid {{ end }}">
+                <div class="invalid-feedback">
+                    {{ .validation.Job }}
+                </div>
+            </div>
+            <div class="mb-6">
+                <label for="">Programming</label>
+                <input type="text" name="programming" value="{{ .tech.Programming }}" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 {{ if .validation.Programming  }} is-invalid {{ end }}">
+                <div class="invalid-feedback">
+                    {{ .validation.Programming }}
+                </div>
+            </div>
+            <div class="mb-6">
+                <label for="">Date</label>
+                <input type="date" name="date" value="{{ .tech.Date }}" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 {{ if .validation.Date  }} is-invalid {{ end }}">
+                <div class="invalid-feedback">
+                    {{ .validation.Date }}
+                </div>
+            </div>
+            <div class="mb-6">
+                <button class="bg-black border-2 border-zinc-800 rounded-lg text-zinc-200 px-4 py-2  hover:border-white hover:bg-stone-200 hover:text-stone-800 hover:delay-150 transition hover:scale-105 hover:-translate-y-1 ease-in-out hover:duration-500" type="submit">Save Data</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
